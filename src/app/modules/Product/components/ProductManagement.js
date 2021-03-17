@@ -18,6 +18,7 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 import Switch from "@material-ui/core/Switch";
 import * as swal from "../../Common/components/SweetAlert";
 import * as ProductAxios from "../_redux/productAxios";
@@ -499,7 +500,7 @@ function ProductManagement() {
         }}
       >
         {/* Render form */}
-        {({ submitForm, isSubmitting, values, setFieldValue }) => (
+        {({ submitForm, isSubmitting, values, setFieldValue, resetForm }) => (
           <Form>
             <Modal
               aria-labelledby="transition-modal-title"
@@ -518,7 +519,7 @@ function ProductManagement() {
               <Fade in={openModal}>
                 <Paper elevation={3} className={classes.paper}>
                   <Grid container justify="flex-start" alignItems="center">
-                    <Typography>New Product</Typography>
+                    <Typography>Product</Typography>
                   </Grid>
                   <Grid
                     container
@@ -593,6 +594,18 @@ function ProductManagement() {
                           setFieldValue("productGroupId", e.target.value);
                         }}
                       ></DropdownProductGroupId>
+                    </Grid>
+                    <Grid item xs={12} lg={12}>
+                      <Button
+                        fullWidth
+                        variant="contained"
+                        color="primary"
+                        disabled={isSubmitting}
+                        onClick={submitForm}
+                        type="reset"
+                      >
+                        Save
+                      </Button>
                     </Grid>
                   </Grid>
                 </Paper>

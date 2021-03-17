@@ -94,7 +94,7 @@ function ProductAuditDetail(props) {
             AuditAmount: 0,
             Quantity_stockCount: 0,
             AuditTotalAmount: 0,
-            Remark: "",
+            remark: "",
             name: "",
             id: 0,
           }}
@@ -249,10 +249,12 @@ function ProductAuditDetail(props) {
                         component={TextField}
                         type="text"
                         label="สาเหตุ"
-                        name="Remark"
+                        name="remark"
                         multiline
-                        value={values.Remark}
-                        setFieldValue={setFieldValue}
+                        value={values.remark}
+                        onChange={(e) => {
+                          setFieldValue("remark", e.target.value);
+                        }}
                       ></Field>
                     </Grid>
                   </Grid>

@@ -1,5 +1,6 @@
 import React from "react";
-import {createMuiTheme, ThemeProvider} from "@material-ui/core";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import { red } from "@material-ui/core/colors";
 
 const theme = createMuiTheme(
   /**
@@ -8,7 +9,8 @@ const theme = createMuiTheme(
   {
     // direction: "rtl",
     typography: {
-      fontFamily: ["Kanit"].join(",")
+      //fontFamily: ["Kanit"].join(","),
+      fontFamily: ["Verdana"].join(","),
     },
 
     palette: {
@@ -29,7 +31,10 @@ const theme = createMuiTheme(
         main: "#f018a6",
         // dark: will be calculated from palette.primary.main,
         // contrastText: "#fff" //will be calculated to contrast with palette.primary.main
-      }
+      },
+      Test: {
+        main: red[400],
+      },
     },
 
     /**
@@ -39,14 +44,14 @@ const theme = createMuiTheme(
       // Name of the component ⚛️
       MuiButtonBase: {
         // The properties to apply
-        disableRipple: false // No more ripple, on the whole application 💣!
+        disableRipple: false, // No more ripple, on the whole application 💣!
       },
 
       // Set default elevation to 1 for popovers.
       MuiPopover: {
-        elevation: 1
-      }
-    }
+        elevation: 1,
+      },
+    },
   }
 );
 

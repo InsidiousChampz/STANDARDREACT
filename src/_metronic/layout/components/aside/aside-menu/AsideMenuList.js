@@ -8,8 +8,9 @@ import Hoc from "../../../../../app/modules/Common/components/Hoc";
 import AppsIcon from "@material-ui/icons/Apps";
 import FastfoodOutlinedIcon from "@material-ui/icons/FastfoodOutlined";
 import FreeBreakfastOutlinedIcon from "@material-ui/icons/FreeBreakfastOutlined";
+import ListAltTwoToneIcon from "@material-ui/icons/ListAltTwoTone";
 import RedeemIcon from "@material-ui/icons/Redeem";
-import { green, red, blue } from "@material-ui/core/colors";
+import { green, red, blue, yellow, purple } from "@material-ui/core/colors";
 
 import { checkIsActive } from "../../../../_helpers";
 
@@ -44,19 +45,21 @@ export function AsideMenuList({ layoutProps }) {
       <ul className={`menu-nav ${layoutProps.ulClasses}`}>
         {/* begin:section:Order */}
         <li className="menu-section ">
-          <h4 className="menu-text">Order Shop[</h4>
+          <h4 className="menu-text">Order Shop</h4>
           <i className="menu-icon flaticon-more-v2"></i>
         </li>
         {/* End:section:Manage Shop */}
 
         {/*begin:New Order*/}
         <li
-          className={`menu-item ${getMenuItemActive("/dashboard", false)}`}
+          className={`menu-item ${getMenuItemActive("/neworders", false)}`}
           aria-haspopup="true"
         >
-          <NavLink className="menu-link" to="/dashboard">
+          <NavLink className="menu-link" to="/neworders">
             <span className="svg-icon menu-icon">
-              <AppsIcon></AppsIcon>
+              <ListAltTwoToneIcon
+                style={{ color: yellow[500] }}
+              ></ListAltTwoToneIcon>
             </span>
             <span className="menu-text">New Order</span>
           </NavLink>
@@ -65,12 +68,14 @@ export function AsideMenuList({ layoutProps }) {
 
         {/*begin:Order*/}
         <li
-          className={`menu-item ${getMenuItemActive("/dashboard", false)}`}
+          className={`menu-item ${getMenuItemActive("/orders", false)}`}
           aria-haspopup="true"
         >
-          <NavLink className="menu-link" to="/dashboard">
+          <NavLink className="menu-link" to="/orders">
             <span className="svg-icon menu-icon">
-              <AppsIcon></AppsIcon>
+              <ListAltTwoToneIcon
+                style={{ color: purple[500] }}
+              ></ListAltTwoToneIcon>
             </span>
             <span className="menu-text">Order</span>
           </NavLink>

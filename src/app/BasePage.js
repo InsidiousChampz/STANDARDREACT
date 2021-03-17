@@ -20,6 +20,9 @@ import Product from "./modules/Product/pages/Product";
 import ProductGroup from "./modules/Product/pages/ProductGroup";
 import ProductAudit from ".//modules/Product/pages/ProductAudit";
 import ProductAuditDetail from ".//modules/Product/components/ProductAuditDetail";
+//Order
+import NewOrders from "./modules/Orders/pages/NewOrders";
+import Orders from "./modules/Orders/pages/Orders";
 
 export default function BasePage(props) {
   // useEffect(() => {
@@ -32,7 +35,6 @@ export default function BasePage(props) {
       <Switch>
         {<Redirect exact from="/" to="/dashboard" />}
         <ContentRoute exact path="/dashboard" component={DashboardPage} />
-
         {/* Start Demo part สามารถ comment ได้ */}
         <ContentRoute exact path="/alert" component={Alert} />
         <ContentRoute exact path="/reduxDemo" component={ReduxDemo} />
@@ -54,8 +56,9 @@ export default function BasePage(props) {
           component={Test}
         />
         {/* End Demo part สามารถ comment ได้ */}
-
         {/* Order */}
+        <ContentRoute exact path="/neworders" component={NewOrders} />
+        <ContentRoute exact path="/orders" component={Orders} />
 
         {/* Manage Shop */}
         <ContentRoute
@@ -66,11 +69,8 @@ export default function BasePage(props) {
         <ContentRoute exact path="/productaudit" component={ProductAudit} />
         <ContentRoute exact path="/productgroup" component={ProductGroup} />
         <ContentRoute exact path="/product" component={Product} />
-
         {/* Users */}
-
         <Route path="/errorUnAuthorized" component={ErrorUnAuthorized} />
-
         {/* nothing match - redirect to error */}
         <Redirect to="/error" />
       </Switch>

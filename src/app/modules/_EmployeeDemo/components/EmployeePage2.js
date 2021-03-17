@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-imports */
 import * as React from "react";
 import { Formik, Form, Field } from "formik";
-import { Button,  Grid } from "@material-ui/core";
+import { Button, Grid } from "@material-ui/core";
 import { FormControlLabel, Radio } from "@material-ui/core";
 import { RadioGroup } from "formik-material-ui";
 import { TextField } from "formik-material-ui";
@@ -11,7 +11,7 @@ import { DatePicker } from "formik-material-ui-pickers";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import { useSelector, useDispatch } from "react-redux";
 import * as employeeRedux from "../_redux/employeeRedux";
-import * as commonValidators from '../../Common/functions/CommonValidators'
+import * as commonValidators from "../../Common/functions/CommonValidators";
 
 import DayJsUtils from "@date-io/dayjs";
 require("dayjs/locale/th");
@@ -38,7 +38,7 @@ function EmployeePage2() {
 
           //validate id card
           if (!commonValidators.validateThaiCitizenID(values.identityCardNo)) {
-            errors.identityCardNo = 'รูปแบบไม่ถูกต้อง'
+            errors.identityCardNo = "รูปแบบไม่ถูกต้อง";
           }
 
           return errors;

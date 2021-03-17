@@ -6,6 +6,8 @@ import * as employee from "../app/modules/_EmployeeDemo/_redux/employeeRedux";
 import * as productAudit from "../app/modules/Product/_redux/productAuditRedux";
 import * as productGroup from "../app/modules/Product/_redux/productGroupRedux";
 import * as product from "../app/modules/Product/_redux/productRedux";
+import * as orders from "../app/modules/Orders/_redux/ordersRedux";
+import * as orderList from "../app/modules/Orders/_redux/orderListRedux";
 
 export const rootReducer = combineReducers({
   auth: auth.reducer,
@@ -14,4 +16,6 @@ export const rootReducer = combineReducers({
   productGroup: productGroup.reducer,
   productAudit: productAudit.reducer,
   product: product.reducer,
+  orders: orders.reducer,
+  orderList: orderList.reducer,
 });

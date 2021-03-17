@@ -2,6 +2,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
+import wpp from "../../app/image/wallpaper.jpeg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,11 +16,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const styles = {
+  paperContainer: {
+    backgroundImage: `url(${wpp})`,
+    backgroundPosition: "center",
+  },
+};
+
 function DashboardPage() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Paper elevation={3}></Paper>
+      <Paper elevation={3} style={styles.paperContainer}></Paper>
     </div>
   );
 }
